@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { Text, Pressable } from 'react-native';
+import { Text, Pressable, View } from 'react-native';
 import AppStyles from '../styles/AppStyles'
+import { useNavigation } from '@react-navigation/native';
 
-export default function Header({ navigation }) {
+export default function Header() {
+  const navigation = useNavigation();
     return (
-        <ImageBackground style ={AppStyles.container} source={background}>
-        <View style={AppStyles.headerContainer}>
-          {/*  put in authentiction, can only navigate if logged in */}
-          <Pressable onPress={navigation.navigate('Home')}> 
-            <Text style={AppStyles.header}>Rewear</Text>
-          </Pressable>
-        </View>
-
-        </ImageBackground>
+      <View style={AppStyles.headerContainer}>
+        {/*  put in authentiction, can only navigate if logged in */}
+        <Pressable onPress={navigation.navigate('Home')}> 
+          <Text style={AppStyles.header}>rewear</Text>
+        </Pressable>
+      </View>
     )
 }

@@ -3,6 +3,7 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import AppStyles from './styles/AppStyles'
 import Login from './screens/Login'
 import SignUp from './screens/SignUp'
+import AddItem from './screens/AddItem'
 import ResetPassword from './screens/ResetPassword'
 import Home from './screens/Home'
 import { NavigationContainer } from '@react-navigation/native'
@@ -14,7 +15,7 @@ export default function App() {
   const Stack = createNativeStackNavigator()
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="SignUp">
         <Stack.Screen 
           name="Login"
           component={Login}

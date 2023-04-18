@@ -25,9 +25,8 @@ export default function ResetPassword({ navigation }) {
   }
   return (
     <ImageBackground style ={AppStyles.container} source={background}> 
-      <View style={AppStyles.headerContainer}>
-        <Text style={AppStyles.header}>Rewear</Text>
-      </View>
+      
+      <Header />
       
       <KeyboardAvoidingView 
         style ={AppStyles.resetPasswordContainer}

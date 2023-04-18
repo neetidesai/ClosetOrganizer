@@ -4,7 +4,7 @@ import AppStyles from '../styles/AppStyles'
 import InlineTextButton from '../components/InlineTextButton';
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth, currentUser } from '../firebase'
-
+import Header from '../components/Header'
 export default function Login({ navigation }) {
   const background = require("../assets/background-img.jpg");
  
@@ -40,9 +40,8 @@ export default function Login({ navigation }) {
 
   return (
     <ImageBackground style ={AppStyles.container} source={background}> 
-      <View style={AppStyles.headerContainer}>
-        <Text style={AppStyles.header}>Rewear</Text>
-      </View>
+      
+      <Header />
       
       <KeyboardAvoidingView 
         style ={AppStyles.loginContainer}

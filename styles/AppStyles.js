@@ -131,5 +131,16 @@ export default StyleSheet.create({
         color: 'red'
       },
 
+      bottomNavContainer: {
+        flex: 0.1,
+        alignSelf: 'stretch',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        position: 'absolute',
+        bottom: 15,
+        width: '100%',
+        backgroundColor: color_cream + '90',
+      },
+
 
 });

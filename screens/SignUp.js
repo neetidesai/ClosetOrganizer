@@ -4,6 +4,7 @@ import AppStyles from '../styles/AppStyles'
 import InlineTextButton from '../components/InlineTextButton';
 import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { auth } from '../firebase'
+import Header from '../components/Header';
 
 export default function SignUp({ navigation }) {
   const background = require("../assets/background-img.jpg");
@@ -39,10 +40,9 @@ export default function SignUp({ navigation }) {
 
   return (
     <ImageBackground style ={AppStyles.container} source={background}> 
-      <View style={AppStyles.headerContainer}>
-        <Text style={AppStyles.header}>Rewear</Text>
-      </View>
       
+      <Header />
+
       <KeyboardAvoidingView 
         style ={AppStyles.createAccountContainer}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
