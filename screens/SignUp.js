@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { ImageBackground, Alert, View, StyleSheet, Image, Text, TextInput, Pressable, KeyboardAvoidingView } from 'react-native';
-import AppStyles from '../styles/AppStyles'
+import AppStyles from '../styles/AppStyles';
 import InlineTextButton from '../components/InlineTextButton';
 import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-import { auth } from '../firebase'
+import { auth } from '../firebase';
 import Header from '../components/Header';
 
 export default function SignUp({ navigation }) {

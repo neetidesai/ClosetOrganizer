@@ -18,6 +18,7 @@ export default function Home({ navigation }) {
       
       <View style={AppStyles.bottomNavContainer}> 
         <BottomNavBar/> 
+        
       </View>
         
         

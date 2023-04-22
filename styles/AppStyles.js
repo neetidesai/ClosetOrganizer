@@ -29,6 +29,10 @@ export default StyleSheet.create({
         width: '100%'
       },
 
+      imageSelectionContainer: {
+        flex: 0.1,
+      },
+
       header: {
         color: color_black,
         fontSize: 40
@@ -66,6 +70,14 @@ export default StyleSheet.create({
         alignSelf: 'center',
       },
 
+      selectImage: {
+        padding: 5,
+        backgroundColor: color_green,
+        borderColor: color_green,
+        borderWidth: 2,
+        borderRadius: 10,
+      },
+
       createAccountContainer: {
         flex: 0.4,
         alignSelf: 'stretch',
@@ -75,7 +87,7 @@ export default StyleSheet.create({
         padding: 10
       },
 
-      resetPsswordContainer: {
+      resetPasswordContainer: {
         flex: 0.4,
         alignSelf: 'stretch',
         alignItems: 'center',
@@ -141,6 +153,13 @@ export default StyleSheet.create({
         width: '100%',
         backgroundColor: color_cream + '90',
       },
+
+      clothingItem: {
+        width: '100%', 
+        height: 400,
+        flex: 0.5,
+        alignItems: 'center',
+      }
 
 
 });

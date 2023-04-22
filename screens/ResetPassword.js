@@ -4,7 +4,7 @@ import AppStyles from '../styles/AppStyles'
 import InlineTextButton from '../components/InlineTextButton';
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from '../firebase'
-
+import Header from '../components/Header'
 
 
 export default function ResetPassword({ navigation }) {

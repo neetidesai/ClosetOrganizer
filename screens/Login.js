@@ -5,6 +5,7 @@ import InlineTextButton from '../components/InlineTextButton';
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth, currentUser } from '../firebase'
 import Header from '../components/Header'
+
 export default function Login({ navigation }) {
   const background = require("../assets/background-img.jpg");
  

@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, Button, Image} from 'react-native';
+import { ImageBackground, KeyboardAvoidingView, Text, View, Image, Pressable} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import Header from '../components/Header'
+import AppStyles from '../styles/AppStyles'
+import ImageViewer from '../components/ImageViewer'
+import BottomNavBar from '../components/BottomNavBar';
 
-export default function AddItem() {
+export default function AddItem({ navigation }) {
+    const background = require("../assets/background-img.jpg");
     const [hasGalleryPermission, setHasGalleryPermission] = useState(null);
-    const [image, setImage] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
         (async () => {
@@ -15,28 +20,56 @@ export default function AddItem() {
 
     const pickImage = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ImagePicker.MediaTypeOptions.Images,
-            allowsEditing: true,
-            aspect: [4, 3],
-            quality: 1,
+          allowsEditing: true,
+          quality: 1,
         });
-    }
-
-    console.log(result)
-
-    if (!result.cancelled){
-        setImage(result.uri);
-    }
+    
+        if (!result.canceled) {
+            setSelectedImage(result.assets[0].uri);
+        } else {
+            
+        }
+      };
 
     if (hasGalleryPermission === false){
         return <Text> No access to internal storage</Text>
     }
 
     return (
-        <View>
-            <Button title = 'Pick Image' onPress={() => pickImage()} />
-            {image && <Image source={{uri: image}} style={{flex:1/2}} />}
-        </View>
+        <ImageBackground style ={AppStyles.container} source={background}> 
+                
+            <Header />
+            
+            <View>
+                <View>
+                    <ImageViewer
+                    placeholderImageSource={'/Users/neeti/Desktop/React-Native/ClosetOrganizer/assets/black_screen.jpeg'}
+                    selectedImage={selectedImage}
+                    />
+                </View>
+                
+                <Pressable
+                style={({ pressed }) => (pressed ? [AppStyles.selectImage, {opacity: 0.6}] : AppStyles.selectImage)}
+                onPress={pickImage}>
+                    <Text style={AppStyles.regularText}> Select Image </Text>
+                </Pressable>
+                <Pressable
+                style={({ pressed }) => (pressed ? [AppStyles.selectImage, {opacity: 0.6}] : AppStyles.selectImage)}
+                onPress={pickImage}>
+                    <Text style={AppStyles.regularText}> Select Image </Text>
+                </Pressable>
+
+            </View>
+
+            <View style={AppStyles.bottomNavContainer}> 
+                <BottomNavBar/>
+            </View>
+
+        </ImageBackground>
     )
 
 }
+      
+      
+
+      
