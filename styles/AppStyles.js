@@ -76,6 +76,10 @@ export default StyleSheet.create({
         borderColor: color_green,
         borderWidth: 2,
         borderRadius: 10,
+        justifyContent: 'center',
+        flexDirection: 'row',
+        alignSelf: 'center',
+        width: 150
       },
 
       createAccountContainer: {
@@ -155,10 +159,10 @@ export default StyleSheet.create({
       },
 
       clothingItem: {
-        width: '100%', 
-        height: 400,
-        flex: 0.5,
-        alignItems: 'center',
+        width: 300, 
+        height: 500,
+        resizeMode: 'contain'
+
       }
 
 

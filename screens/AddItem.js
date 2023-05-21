@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import AppStyles from '../styles/AppStyles'
 import ImageViewer from '../components/ImageViewer'
 import BottomNavBar from '../components/BottomNavBar';
+import SignUp from './SignUp';
 
 export default function AddItem({ navigation }) {
     const background = require("../assets/background-img.jpg");
@@ -40,10 +41,9 @@ export default function AddItem({ navigation }) {
                 
             <Header />
             
-            <View>
+            <View style={{gap: 10}}>
                 <View>
                     <ImageViewer
-                    placeholderImageSource={'/Users/neeti/Desktop/React-Native/ClosetOrganizer/assets/black_screen.jpeg'}
                     selectedImage={selectedImage}
                     />
                 </View>
@@ -53,10 +53,11 @@ export default function AddItem({ navigation }) {
                 onPress={pickImage}>
                     <Text style={AppStyles.regularText}> Select Image </Text>
                 </Pressable>
+
                 <Pressable
                 style={({ pressed }) => (pressed ? [AppStyles.selectImage, {opacity: 0.6}] : AppStyles.selectImage)}
-                onPress={pickImage}>
-                    <Text style={AppStyles.regularText}> Select Image </Text>
+                onPress={() => navigation.navigate("SignUp")}>
+                    <Text style={AppStyles.regularText}> Use Image </Text>
                 </Pressable>
 
             </View>
