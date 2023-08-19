@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
 import { fontFamily } from '@mui/system';
+import { isAbsolute } from 'path';
 
 const color_green = '#7AA28D';
 const color_purple = '#590A41';
@@ -70,7 +71,7 @@ export default StyleSheet.create({
         alignSelf: 'center',
       },
 
-      selectImage: {
+      themeButton: {
         padding: 5,
         backgroundColor: color_green,
         borderColor: color_green,
@@ -161,8 +162,27 @@ export default StyleSheet.create({
       clothingItem: {
         width: 300, 
         height: 500,
-        resizeMode: 'contain'
+        flex: 0.5,
+        resizeMode: "contain",
+        top: 0,
+        alignSelf: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row'
+      },
 
+      categorizeImage: {
+        flex: 0.5,
+        width: '100%',
+        justifyContent: 'center',
+        position: 'absolute',
+        paddingBottom: 50
+      },
+
+      categorizeDropdown: {
+        flex: 0.5,
+        position: 'absolute',
+        bottom: 0,
+        margin: 50
       }
 
 

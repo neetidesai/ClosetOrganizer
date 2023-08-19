@@ -9,6 +9,8 @@ class ImageProcessor():
         self.model = tf.keras.models.load_model('my_model.h5')
         self.class_names = ['Top', 'Trouser', 'Pullover', 'Dress', 'Coat', 
                             'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
+        
+        self.model.summary()
 
     def remove_background(self):
 
@@ -35,9 +37,11 @@ class ImageProcessor():
     def classify_image(self):
         
         img = cv2.resize(self.image, dsize=(28, 28))
-
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        img = cv2.bitwise_not(img)
+        img = img / 255
+        print(img.shape)
         img_list = (np.expand_dims(img,0))
 
         prediction = self.model.predict(img_list)

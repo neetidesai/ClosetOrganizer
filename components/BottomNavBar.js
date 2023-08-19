@@ -11,25 +11,27 @@ export default function BottomNavBar({ }) {
 
     return (
         
-    <Stack direction="row" fill center spacing={70}>
-        <IconButton 
-        onPress={() => navigation.navigate("Home")}
-        icon={props => <Icon name="home" size={50} />} 
-        color="black"
-        
-        />
+    <View style={AppStyles.bottomNavContainer}>
+        <Stack direction="row" fill center spacing={70}>
+            <IconButton 
+            onPress={() => navigation.navigate("Home")}
+            icon={props => <Icon name="home" size={50} />} 
+            color="black"
+            
+            />
 
-        <IconButton
-        icon={props => <Icon name="camera" size={50} />}
-        color="black"
-        siz
-        />
+            <IconButton
+            icon={props => <Icon name="camera" size={50} />}
+            color="black"
+            siz
+            />
 
-        <IconButton
-        icon={props => <Icon name="hanger" size={50} />}
-        color="black"
-        />
-    </Stack>
+            <IconButton
+            icon={props => <Icon name="hanger" size={50} />}
+            color="black"
+            />
+        </Stack>
+    </View>
     );
 }
 

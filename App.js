@@ -4,6 +4,7 @@ import AppStyles from './styles/AppStyles'
 import Login from './screens/Login'
 import SignUp from './screens/SignUp'
 import AddItem from './screens/AddItem'
+import CategorizeItem from './screens/CategorizeItem'
 import ResetPassword from './screens/ResetPassword'
 import Home from './screens/Home'
 import { NavigationContainer } from '@react-navigation/native'
@@ -40,6 +41,12 @@ export default function App() {
           name="AddItem"
           component={AddItem}
           options={{headerShown: false}}/>
+
+        <Stack.Screen 
+          name="CategorizeItem"
+          component={CategorizeItem}
+          options={{headerShown: false}}/>
+
       </Stack.Navigator>
     </NavigationContainer>
 
