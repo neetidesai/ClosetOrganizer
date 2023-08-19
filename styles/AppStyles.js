@@ -183,7 +183,25 @@ export default StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         margin: 50
-      }
+      },
 
+      categorizeTextbox: {
+        padding: 5,
+        backgroundColor: 'white',
+        borderColor: 'black',
+        borderWidth: 1,
+        height: 50,
+        justifyContent: 'center',
+        flexDirection: 'row',
+        borderRadius: 10,
+        alignSelf: 'stretch',
+      },
+
+      charCount: {
+        textAlign: 'right',
+        paddingRight: 10
+
+      }
+        
 
 });
